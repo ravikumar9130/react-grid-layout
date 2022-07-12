@@ -1,5 +1,10 @@
-
-
-*{
-  color:#cfcaca;
+.grid-wrapper{
+  background: #cfcaca;
+}
+.root{
+  padding: 16px;
+}
+.grid-item-content{
+  padding: 8px;
+  color:black;
 }
