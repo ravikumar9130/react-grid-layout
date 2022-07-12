@@ -4,22 +4,23 @@ import styled from "styled-components";
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
 const layout = [
-  { i: "c1", x: 0, y: 0, w: 1, h: 1 },
-  { i: "c2", x: 1, y: 0, w: 1, h: 1 },
-  { i: "c3", x: 2, y: 0, w: 1, h: 1 },
-  { i: "c4", x: 3, y: 0, w: 1, h: 1 },
-  { i: "c5", x: 4, y: 0, w: 1, h: 1 }
+  { i: "c1", x: 0, y: 0, w: 1, h: 1 ,static:false},
+  { i: "c2", x: 1, y: 0, w: 1, h: 1,static:false },
+  { i: "c3", x: 2, y: 0, w: 1, h: 1 ,static:false},
+  { i: "c4", x: 3, y: 0, w: 1, h: 1 ,static:false},
+  { i: "c5", x: 4, y: 0, w: 1, h: 1 ,static:false}
 ];
 const GridItemWrapper = styled.div`
-  background: #f5f5f5;
+   background: #cfcaca;
 `;
 
 const GridItemContent = styled.div`
-  padding: 8px;
+   padding: 8px;
+   color:black;
 `;
 
 const Root = styled.div`
-  padding: 16px;
+ padding: 16px;
 `;
 
 const getLayouts = () => {
@@ -36,11 +37,15 @@ export const Grid = () => {
 return (
   <Root>
     <ResponsiveGridLayout
+    
       layouts={getLayouts()}
       breakpoints={{ lg: 1200, md: 996, sm: 768, xs: 480, xxs: 0 }}
       cols={{ lg: 5, md: 4, sm: 3, xs: 2, xxs: 1 }}
       rowHeight={300}
       width={1000}
+      isResizable={true}
+      autoSize={true}
+
       onLayoutChange={handleLayoutChange}
     >
       <GridItemWrapper key="c1">
